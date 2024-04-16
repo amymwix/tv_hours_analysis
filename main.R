@@ -1,6 +1,7 @@
 library(tidyverse)
 
 tv_hours_table <- gss_cat %>% 
+  filter(age >= 30) %>% 
   group_by(marital) %>% 
   summarise(mean_tv_hours = mean(tvhours, na.rm = T))
 #divorced people watch more Tv than married people
